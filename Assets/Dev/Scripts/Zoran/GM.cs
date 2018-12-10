@@ -34,10 +34,18 @@ public class GM : MonoBehaviour
         }
 
         //Shortcuts
+        //Debug
         if (Input.GetKeyDown(KeyCode.D))
+        {
             Debug.Log("Number of Trash = " + numberOfTrash);
+            Debug.Log("Amount of Trash in the Trash Bin = " + TrashBin.trashBinAmount);
+            Debug.Log("Total Trash amount = " + GM.TrashAmount);
+        }        
 
+        //Make things go faster
         if (Input.GetKey(KeyCode.S))
+        {
             trash = 0.25f;
+        }
     }
 }
