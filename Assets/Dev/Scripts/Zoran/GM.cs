@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GM : MonoBehaviour
+{
+    public static float trash = 0f;
+    public static float TrashAmount = 0f;
+    
+	void Update ()
+    {
+        //Kijk hoeveel objecten met de tag "Trash" er zijn en zet ze in een array
+        GameObject[] TrashObjects = GameObject.FindGameObjectsWithTag("Trash");
+        int numberOfTrash = TrashObjects.Length;
+
+        if (numberOfTrash >= 9)
+        {
+            TrashAmount += 0.9f * Time.deltaTime;
+            trash = 0.007f;
+        }
+        else if (numberOfTrash >= 6)
+        {
+            TrashAmount += 0.6f * Time.deltaTime;
+            trash = 0.005f;
+        }
+        else if (numberOfTrash >= 3)
+        {
+            TrashAmount += 0.3f * Time.deltaTime;
+            trash = 0.003f;
+        }
+        else //default
+        {
+            trash = 0.001f;
+        }
+
+        //Shortcuts
+        if (Input.GetKeyDown(KeyCode.D))
+            Debug.Log("Number of Trash = " + numberOfTrash);
+
+        if (Input.GetKey(KeyCode.S))
+            trash = 0.25f;
+    }
+}
