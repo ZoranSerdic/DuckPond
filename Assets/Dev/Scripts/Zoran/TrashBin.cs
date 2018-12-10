@@ -7,8 +7,10 @@ public class TrashBin : MonoBehaviour
     public static float trashBinAmount = 0f;
 
     public float totalTrashAllowed = 4f;
-    
-	void Update ()
+
+    private float TrashRemove = 2;
+
+    void Update ()
     {
 		if (trashBinAmount >= totalTrashAllowed)
         {
@@ -18,6 +20,17 @@ public class TrashBin : MonoBehaviour
             //spawn x trashBinAmount in water
         }
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Trash"))
+        {
+            GM.TrashAmount -= TrashRemove;
+            TrashBin.trashBinAmount += 1;
+
+            Destroy(other.gameObject);
+        }
+    }
 
     private void OnMouseDown()
     {
