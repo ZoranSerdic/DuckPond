@@ -16,21 +16,21 @@ public class GM : MonoBehaviour
         if (numberOfTrash >= 9)
         {
             TrashAmount += 0.9f * Time.deltaTime;
-            trash = 0.007f;
+            trash = 0.001f;
         }
         else if (numberOfTrash >= 6)
         {
             TrashAmount += 0.6f * Time.deltaTime;
-            trash = 0.005f;
+            trash = 0.0007f;
         }
         else if (numberOfTrash >= 3)
         {
             TrashAmount += 0.3f * Time.deltaTime;
-            trash = 0.003f;
+            trash = 0.0005f;
         }
         else //default
         {
-            trash = 0.001f;
+            trash = 0.0002f;
         }
 
         //Shortcuts

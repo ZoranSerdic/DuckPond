@@ -14,8 +14,7 @@ public class TrashBin : MonoBehaviour
     {
 		if (trashBinAmount >= totalTrashAllowed)
         {
-            Debug.Log("Trash Bin is overflowing! " +
-                "All the Trash that was in the Trash Bin is now back in the water.");
+            Debug.Log("Trash Bin is overflowing! \n All the Trash that was in the Trash Bin is now back in the water.");
             trashBinAmount = 0;
             //spawn x trashBinAmount in water
         }
