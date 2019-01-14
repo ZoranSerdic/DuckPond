@@ -12,6 +12,8 @@ public class TrashSpawning : MonoBehaviour
     private int Timer;
     private float timepassed = 0;
 
+    private float GameTimePassed = 0;
+
 	void Start ()
     {
         
@@ -19,6 +21,8 @@ public class TrashSpawning : MonoBehaviour
 	
 	void Update ()
     {
+        GameTimePassed += Time.deltaTime;
+
         if (timepassed < Timer)
         {
             timepassed += Time.deltaTime;
@@ -27,6 +31,9 @@ public class TrashSpawning : MonoBehaviour
         {
             timepassed = 0;
             SpawnObject(TrashPrefab, 0);
+
+            //time - timepassed / 2
+            Timer = (int)Random.Range(10, Mathf.Floor(((float)Timer - timepassed) / 2f));
         }
 	}
 
