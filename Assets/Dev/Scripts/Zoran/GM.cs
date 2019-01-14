@@ -21,12 +21,20 @@ public class GM : MonoBehaviour
         else if (numberOfTrash >= 6)
         {
             TrashAmount += 0.6f * Time.deltaTime;
+
             trash = 0.0007f;
+
+            trash = 0.001f;
         }
+
         else if (numberOfTrash >= 3)
         {
             TrashAmount += 0.3f * Time.deltaTime;
+
             trash = 0.0005f;
+
+            trash = 0.001f;
+
         }
         else //default
         {
