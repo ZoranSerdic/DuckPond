@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TrashBin : MonoBehaviour
 {
-    public static float trashBinAmount = 0f;
+    public TextMeshProUGUI text;
 
+    public static float trashBinAmount = 0f;
     public float totalTrashAllowed = 4f;
 
     private float TrashRemove = 2;
+    private float trashTotal;
 
     void Update ()
     {
+        //ui score update
+        text.text = "" + trashTotal;
+
 		if (trashBinAmount >= totalTrashAllowed)
         {
             Debug.Log("Trash Bin is overflowing! \n All the Trash that was in the Trash Bin is now back in the water.");
@@ -26,6 +32,7 @@ public class TrashBin : MonoBehaviour
         {
             GM.TrashAmount -= TrashRemove;
             TrashBin.trashBinAmount += 1;
+            trashTotal += 1;
 
             Destroy(other.gameObject);
         }
