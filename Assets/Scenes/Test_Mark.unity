@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1203,7 +1203,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7374445a11afd1e4c926f51a37e43d19, type: 2}
+  - {fileID: 2100000, guid: 76139ac72e1641344a39dc85148456d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1273,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8a3ead8fe78c742ae8c8a7b39a29a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
   totalTrashAllowed: 4
 --- !u!65 &326588195
 BoxCollider:
@@ -2319,11 +2320,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4981587905994646, guid: 351e0743182d8814ebbf3b70b9cce553,
     type: 2}
   m_PrefabInternal: {fileID: 548102682}
---- !u!111 &551496207 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 111174170426607112, guid: 1f632df0757089a4caf4a3fb89ba4479,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870222572}
 --- !u!1 &563980831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,7 +3579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashPrefab: {fileID: 1224995476383126, guid: 1f632df0757089a4caf4a3fb89ba4479,
     type: 2}
-  Animation: {fileID: 551496207}
   Timer: 10
 --- !u!4 &782996891 stripped
 Transform:
@@ -6630,6 +6625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8a3ead8fe78c742ae8c8a7b39a29a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
   totalTrashAllowed: 4
 --- !u!65 &1363761128
 BoxCollider:
