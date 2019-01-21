@@ -31,9 +31,12 @@ public class TrashBin : MonoBehaviour
         if (other.gameObject.CompareTag("Trash"))
         {
             GM.TrashAmount -= TrashRemove;
-            TrashBin.trashBinAmount += 1;
+            trashBinAmount += 1;
+            if (trashTotal == 0)
+            {
+                Timer.GameStarted = true;
+            }
             trashTotal += 1;
-
             Destroy(other.gameObject);
         }
     }

@@ -10,11 +10,16 @@ public class Timer : MonoBehaviour
     public float realTime = 0.0f;
     public float Time;
 
+    public static bool GameStarted = false;
+
     void Update()
     {
-        realTime += UnityEngine.Time.deltaTime;
-        Time = Mathf.Floor(realTime);
+        if (GameStarted == true)
+        {
+            realTime += UnityEngine.Time.deltaTime;
+            Time = Mathf.Floor(realTime);
 
-        text.text = "" + Time;
+            text.text = "" + Time;
+        }
     }
 }
