@@ -1,4 +1,6 @@
-﻿// Gemaakt met behulp van https://www.youtube.com/watch?v=lWCPFwxZpVg
+﻿//Gemaakt met behulp van https://www.youtube.com/watch?v=lWCPFwxZpVg
+//Gemaakt door Ayoub Lamdaghri
+
 Shader "Custom/Water" 
 {
 	Properties
