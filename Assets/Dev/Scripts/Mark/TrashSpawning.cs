@@ -6,34 +6,42 @@ public class TrashSpawning : MonoBehaviour
 {
     private GameObject Temp;
     public GameObject TrashPrefab;
+
+    [SerializeField]
+    private GameObject GM;
     //public Animation Animation;
 
     [SerializeField]
-    private int Timer;
+    private float Spawn_Timer;
     private float timepassed = 0;
+    private Timer GM_Timer;
 
-    private float GameTimePassed = 0;
-
-	void Start ()
+    void Start ()
     {
-        
+       GM_Timer = GM.GetComponent<Timer>();
 	}
 	
 	void Update ()
     {
-        GameTimePassed += Time.deltaTime;
-
-        if (timepassed < Timer)
+        if (timepassed < Spawn_Timer)
         {
             timepassed += Time.deltaTime;
         }
-        else if (timepassed >= Timer)
+        else if (timepassed >= Spawn_Timer)
         {
             timepassed = 0;
             SpawnObject(TrashPrefab, 0);
 
             //time - timepassed / 2
-            Timer = (int)Random.Range(10, Mathf.Floor(((float)Timer - timepassed) / 2f));
+            if (GM_Timer.Time < 10)
+            {
+
+            }
+            else if (Spawn_Timer > 0.5f)
+            {
+                Spawn_Timer = ( Spawn_Timer - (GM_Timer.Time * 0.0005f));
+                Debug.Log(Spawn_Timer);
+            }
         }
 	}
 

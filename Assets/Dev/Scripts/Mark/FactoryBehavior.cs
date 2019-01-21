@@ -6,6 +6,8 @@ public class FactoryBehavior : MonoBehaviour
 {
     private int factorystate = 0;
 
+    private GameObject GM;
+
     [SerializeField]
     GameObject MainStructure;
     [SerializeField]
