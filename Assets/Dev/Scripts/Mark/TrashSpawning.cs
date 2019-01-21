@@ -23,24 +23,27 @@ public class TrashSpawning : MonoBehaviour
 	
 	void Update ()
     {
-        if (timepassed < Spawn_Timer)
+        if (Timer.GameStarted == true)
         {
-            timepassed += Time.deltaTime;
-        }
-        else if (timepassed >= Spawn_Timer)
-        {
-            timepassed = 0;
-            SpawnObject(TrashPrefab, 0);
-
-            //time - timepassed / 2
-            if (GM_Timer.Time < 10)
+            if (timepassed < Spawn_Timer)
             {
-
+                timepassed += Time.deltaTime;
             }
-            else if (Spawn_Timer > 0.5f)
+            else if (timepassed >= Spawn_Timer)
             {
-                Spawn_Timer = ( Spawn_Timer - (GM_Timer.Time * 0.0005f));
-                Debug.Log(Spawn_Timer);
+                timepassed = 0;
+                SpawnObject(TrashPrefab, 0);
+
+                //time - timepassed / 2
+                if (GM_Timer.Time < 5)
+                {
+
+                }
+                else if (Spawn_Timer > 0.5f)
+                {
+                    Spawn_Timer = (Spawn_Timer - (GM_Timer.Time * 0.0005f));
+                    Debug.Log(Spawn_Timer);
+                }
             }
         }
 	}
