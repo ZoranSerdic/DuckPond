@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class GM : MonoBehaviour
 {
+    [SerializeField] private GameObject myImage;
+
+    public float GameOverAmount = 10f;
+
     public static float trash = 0f;
     public static float TrashAmount = 0f;
-    
-	void Update ()
+
+    private void Start()
+    {
+        myImage.SetActive(false);
+    }
+
+    void Update ()
     {
         //Kijk hoeveel objecten met de tag "Trash" er zijn en zet ze in een array
         GameObject[] TrashObjects = GameObject.FindGameObjectsWithTag("Trash");
         int numberOfTrash = TrashObjects.Length;
+
+        if (/*TrashObjects.Length >= GameOverAmount*/Input.GetKeyDown("i"))
+        {
+            Debug.Log("Game Over");
+            myImage.SetActive(true);
+        }
+        //
 
         if (numberOfTrash >= 9)
         {
